@@ -1,0 +1,220 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+nav {
+    padding: 20px;
+    text-align: right;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0099ff;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.logo {
+    width: 150px;
+    margin: 40px auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.mission {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: justify;
+}
+
+/* Collection Page */
+.collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.product {
+    text-align: left;
+}
+
+.product h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.price::before {
+    content: "$";
+}
+
+/* Contact Page */
+.contact {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: transparent;
+    font-family: 'Archivo', sans-serif;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Archivo', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #555;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dark-theme nav a {
+    color: #fff;
+}
+
+.dark-theme input {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .collection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+    
+    .collection {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 0 10px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .logo {
+        width: 120px;
+    }
+}
